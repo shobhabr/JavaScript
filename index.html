@@ -23,6 +23,11 @@
         <script type=text/javascript>
            "use strict";
             $(document).ready(function () {
+
+                 function getRandomNumber(maxnumber){
+                    var x = Math.floor(Math.random()*maxnumber+1);
+                    return x;
+                 }
                 // function code goes here
                 $('#submitButton').click(function () {
                    var a=10.0;
@@ -40,8 +45,20 @@
                    console.log(divide);
                    console.log(modulus);
                    console.log(average);
-                   $('#details').html("Display output here.");  
-                    console.log("this is console log");                 
+
+                   var score= getRandomNumber(50)+50;
+                   var  displayResults="";
+
+                   if(score>= 90){
+                      displayResults="your are awesome";
+                   }else if(score>= 80){
+                      displayResults="your are good";
+                   }
+                   else{
+                      displayResults="your are average";
+                   }
+                   $('#details').html(displayResults);  
+                           
                 });
             });
         </script>
